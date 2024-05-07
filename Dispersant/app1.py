@@ -47,6 +47,13 @@ import sklearn
 # XGBoost_final.load_model(model_file_path)
 
 import urllib.request
+# Download the audio file from GitHub
+url = "https://github.com/PaulUbi/Dispersant_app/raw/main/Dispersant/beep.mp3"
+response = requests.get(url)
+
+if response.status_code == 200:
+    with open("beep.mp3", "wb") as f:
+        f.write(response.content)
 
 # URL of the model file on GitHub
 model_url = "https://github.com/PaulUbi/Dispersant_app/raw/main/Dispersant/xgboost_model.model"
@@ -112,6 +119,6 @@ if st.sidebar.button('Predict'):
     if prediction[0] < 50:
         st.markdown('<style>@keyframes blink { 50% { opacity: 0; } } .blinking { animation: blink 1s infinite; color: red; }</style>', unsafe_allow_html=True)
         st.markdown(f'<p class="blinking">Predicted Efficiency: {prediction[0]:.2f}% - Warning: Dispersant usage may not be feasible</p>', unsafe_allow_html=True)
-        playsound("https://github.com/PaulUbi/Dispersant_app/blob/main/Dispersant/beep.mp3")
+        playsound("beep.mp3")
     else:
         st.success(f'Predicted Efficiency: {prediction[0]:.2f}%- Dispersant usage is feasible')
