@@ -54,7 +54,7 @@ st.title('Dispersant Recommender System')
 col1, col2 = st.columns(2)
 
 # Add the dispersant image to the first column
-col1.image('https://github.com/PaulUbi/Dispersant_app/blob/main/Dispersant/Dipersant_image.png', caption='Oil Dispersant', width=300)
+col1.image('https://raw.githubusercontent.com/PaulUbi/Dispersant_app/main/Dispersant/Dipersant_image.png', caption='Oil Dispersant', width=300)
 
 # Add your school's logo image to the second column
 col2.image('KNRTU.jpg', caption='School Logo', width=200)
