@@ -92,10 +92,10 @@ This app predicts the efficiency of oil dispersants based on input parameters.
 # Input fields for user input
 st.sidebar.header('Input Parameters')
 st.sidebar.markdown('Adjust the parameters below:')
-temperature = st.sidebar.number_input('Temperature (C)', min_value=0.0, max_value=30.0, value=25.0)
+temperature = st.sidebar.number_input('Temperature (C)', min_value=0.0, max_value=30.0, value=25.0,format="%.2f")
 salinity = st.sidebar.number_input('Salinity (g/L)', min_value=0.0, max_value=35.0, value=15.0)
-viscosity = st.sidebar.number_input('Kinematic Viscosity (mm^2/c)', min_value=0.0, max_value=80.0, value=50.0)
-density = st.sidebar.number_input('Density', min_value=0.5, max_value=0.9, value=0.7)
+viscosity = st.sidebar.number_input('Kinematic Viscosity (mm^2/c)', min_value=0.0, max_value=80.0, value=50.0, format="%.3f")
+density = st.sidebar.number_input('Density', min_value=0.5, max_value=0.9, value=0.75,format="%.4f")
 oil_field = st.sidebar.selectbox('Oil Field', ["Хохряковское", "Усинское", "Правдинское", "Нагорн.(Турней)", "Нагорн.(Башкир)"])
 dispersant_ratio = st.sidebar.selectbox('Dispersant Ratio', ["1:10", "1:20"])
 
