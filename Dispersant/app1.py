@@ -4,10 +4,18 @@ import pandas as pd
 import xgboost as xgb
 from playsound import playsound
 import pickle
+import os
+
+
+# Get the absolute path of the model file
+model_file_path = os.path.abspath("xgboost_model.pkl")
 
 # Load the model
-with open('xgboost_model.pkl', 'rb') as f:
+with open(model_file_path, 'rb') as f:
     XGBoost_final = pickle.load(f)
+
+# Now you can use XGBoost_final for prediction
+
 
 
 # # Load the saved XGBoost model
