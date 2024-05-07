@@ -6,6 +6,7 @@ from playsound import playsound
 import pickle
 import os
 import sklearn
+import requests
 
 # Define the parameters
 # params = {
