@@ -7,14 +7,37 @@ import pickle
 import os
 
 
-# Get the absolute path of the model file
-model_file_path = os.path.abspath("xgboost_model.pkl")
+# Define the parameters
+params = {
+    'objective': 'reg:squarederror',
+    'base_score': 0.5,
+    'booster': 'gbtree',
+    'colsample_bylevel': 1,
+    'colsample_bynode': 1,
+    'colsample_bytree': 1.0,
+    'gamma': 0.1,
+    'grow_policy': 'depthwise',
+    'learning_rate': 0.1,
+    'max_bin': 256,
+    'max_cat_to_onehot': 4,
+    'max_depth': 3,
+    'min_child_weight': 1,
+    'missing': float('nan'),
+    'n_estimators': 200,
+    'n_jobs': 0,
+    'num_parallel_tree': 1,
+    'random_state': 42,
+    'reg_alpha': 0,
+    'reg_lambda': 1,
+    'sampling_method': 'uniform',
+    'subsample': 0.5,
+    'tree_method': 'exact',
+    'validate_parameters': 1
+}
 
-# Load the model
-with open(model_file_path, 'rb') as f:
-    XGBoost_final = pickle.load(f)
+# Initialize the XGBoost model
+XGBoost_final = xgb.XGBRegressor(**params)
 
-# Now you can use XGBoost_final for prediction
 
 
 
