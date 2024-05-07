@@ -3,11 +3,17 @@ import numpy as np
 import pandas as pd
 import xgboost as xgb
 from playsound import playsound
+import pickle
 
-# Load the saved XGBoost model
-model_file_path = "xgboost_model.model"  # Specify the path and filename of your saved model
-XGBoost_final = xgb.Booster()
-XGBoost_final.load_model(model_file_path)
+# Load the model
+with open('xgboost_model.pkl', 'rb') as f:
+    XGBoost_final = pickle.load(f)
+
+
+# # Load the saved XGBoost model
+# model_file_path = "xgboost_model.model"  # Specify the path and filename of your saved model
+# XGBoost_final = xgb.Booster()
+# XGBoost_final.load_model(model_file_path)
 
 # Define the app interface
 
