@@ -57,7 +57,7 @@ col1, col2 = st.columns(2)
 col1.image('https://raw.githubusercontent.com/PaulUbi/Dispersant_app/main/Dispersant/Dipersant_image.png', caption='Oil Dispersant', width=300)
 
 # Add your school's logo image to the second column
-col2.image('KNRTU.jpg', caption='School Logo', width=200)
+col2.image('https://raw.githubusercontent.com/PaulUbi/Dispersant_app/main/Dispersant/KNRTU.jpg', caption='School Logo', width=200)
 
 
 #####
