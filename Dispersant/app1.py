@@ -8,43 +8,43 @@ import os
 import sklearn
 
 # Define the parameters
-params = {
-    'objective': 'reg:squarederror',
-    'base_score': 0.5,
-    'booster': 'gbtree',
-    'colsample_bylevel': 1,
-    'colsample_bynode': 1,
-    'colsample_bytree': 1.0,
-    'gamma': 0.1,
-    'grow_policy': 'depthwise',
-    'learning_rate': 0.1,
-    'max_bin': 256,
-    'max_cat_to_onehot': 4,
-    'max_depth': 3,
-    'min_child_weight': 1,
-    'missing': float('nan'),
-    'n_estimators': 200,
-    'n_jobs': 0,
-    'num_parallel_tree': 1,
-    'random_state': 42,
-    'reg_alpha': 0,
-    'reg_lambda': 1,
-    'sampling_method': 'uniform',
-    'subsample': 0.5,
-    'tree_method': 'exact',
-    'validate_parameters': 1
-}
+# params = {
+#     'objective': 'reg:squarederror',
+#     'base_score': 0.5,
+#     'booster': 'gbtree',
+#     'colsample_bylevel': 1,
+#     'colsample_bynode': 1,
+#     'colsample_bytree': 1.0,
+#     'gamma': 0.1,
+#     'grow_policy': 'depthwise',
+#     'learning_rate': 0.1,
+#     'max_bin': 256,
+#     'max_cat_to_onehot': 4,
+#     'max_depth': 3,
+#     'min_child_weight': 1,
+#     'missing': float('nan'),
+#     'n_estimators': 200,
+#     'n_jobs': 0,
+#     'num_parallel_tree': 1,
+#     'random_state': 42,
+#     'reg_alpha': 0,
+#     'reg_lambda': 1,
+#     'sampling_method': 'uniform',
+#     'subsample': 0.5,
+#     'tree_method': 'exact',
+#     'validate_parameters': 1
+# }
 
-# Initialize the XGBoost model
-XGBoost_final = xgb.XGBRegressor(**params)
-
-
+# # Initialize the XGBoost model
+# XGBoost_final = xgb.XGBRegressor(**params)
 
 
-# # Load the saved XGBoost model
-# model_file_path = "xgboost_model.model"  # Specify the path and filename of your saved model
-# XGBoost_final = xgb.Booster()
-# XGBoost_final.load_model(model_file_path)
+
+
+# Load the saved XGBoost model
+model_file_path = "https://github.com/PaulUbi/Dispersant_app/blob/main/Dispersant/xgboost_model.model"  # Specify the path and filename of your saved model
+XGBoost_final = xgb.Booster()
+XGBoost_final.load_model(model_file_path)
 
 # Define the app interface
 
