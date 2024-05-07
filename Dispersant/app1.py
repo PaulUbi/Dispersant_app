@@ -5,7 +5,7 @@ import xgboost as xgb
 from playsound import playsound
 import pickle
 import os
-
+import sklearn
 
 # Define the parameters
 params = {
