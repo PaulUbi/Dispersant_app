@@ -4,3 +4,4 @@ pandas
 xgboost
 playsound
 scikit-learn==1.2.2
+pydub
