@@ -41,10 +41,26 @@ import sklearn
 
 
 
-# Load the saved XGBoost model
-model_file_path = "https://github.com/PaulUbi/Dispersant_app/blob/main/Dispersant/xgboost_model.model"  # Specify the path and filename of your saved model
+# # Load the saved XGBoost model
+# model_file_path = "https://github.com/PaulUbi/Dispersant_app/blob/main/Dispersant/xgboost_model.model"  # Specify the path and filename of your saved model
+# XGBoost_final = xgb.Booster()
+# XGBoost_final.load_model(model_file_path)
+
+import urllib.request
+
+# URL of the model file on GitHub
+model_url = "https://github.com/PaulUbi/Dispersant_app/raw/main/Dispersant/xgboost_model.model"
+
+# Local file path to save the model
+local_model_path = "xgboost_model.model"
+
+# Download the model file
+urllib.request.urlretrieve(model_url, local_model_path)
+
+# Load the model from the local file
 XGBoost_final = xgb.Booster()
-XGBoost_final.load_model(model_file_path)
+XGBoost_final.load_model(local_model_path)
+
 
 # Define the app interface
 
