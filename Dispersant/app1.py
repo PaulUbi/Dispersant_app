@@ -7,6 +7,8 @@ import pickle
 import os
 import sklearn
 import requests
+from pydub import AudioSegment
+from pydub.playback import play
 
 # Define the parameters
 # params = {
@@ -120,6 +122,7 @@ if st.sidebar.button('Predict'):
     if prediction[0] < 50:
         st.markdown('<style>@keyframes blink { 50% { opacity: 0; } } .blinking { animation: blink 1s infinite; color: red; }</style>', unsafe_allow_html=True)
         st.markdown(f'<p class="blinking">Predicted Efficiency: {prediction[0]:.2f}% - Warning: Dispersant usage may not be feasible</p>', unsafe_allow_html=True)
-        playsound("beep.mp3")
+        sound = AudioSegment.from_file("beep.mp3")
+        play(sound)
     else:
         st.success(f'Predicted Efficiency: {prediction[0]:.2f}%- Dispersant usage is feasible')
